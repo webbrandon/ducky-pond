@@ -1,0 +1,1131 @@
+[gd_scene load_steps=127 format=2]
+
+[ext_resource path="res://duck/Duck.tscn" type="PackedScene" id=1]
+[ext_resource path="res://lillypads/LillyPads.tscn" type="PackedScene" id=2]
+[ext_resource path="res://pond/Water.material" type="Material" id=3]
+[ext_resource path="res://duck/Duck.gd" type="Script" id=4]
+[ext_resource path="res://hoverd.png" type="Texture" id=5]
+[ext_resource path="res://default.png" type="Texture" id=6]
+[ext_resource path="res://hold.png" type="Texture" id=7]
+[ext_resource path="res://disabled.png" type="Texture" id=8]
+[ext_resource path="res://duck_pond.gd" type="Script" id=9]
+[ext_resource path="res://join_host.gd" type="Script" id=10]
+[ext_resource path="res://loading.png" type="Texture" id=11]
+[ext_resource path="res://duck/client.gd" type="Script" id=12]
+[ext_resource path="res://ducky-icon.png" type="Texture" id=13]
+[ext_resource path="res://ducky-pond-text.png" type="Texture" id=14]
+[ext_resource path="res://duck/UserNameEdit.gd" type="Script" id=15]
+[ext_resource path="res://default_env.tres" type="Environment" id=16]
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "Plane001"
+surfaces/0 = {
+"aabb": AABB( -45.4433, -0.0235353, -45.4433, 90.8865, 1.00005e-05, 90.8865 ),
+"array_data": PoolByteArray( 5, 164, 14, 194, 34, 205, 192, 188, 5, 164, 14, 66, 0, 127, 0, 0, 125, 0, 239, 127, 201, 184, 194, 61, 5, 164, 14, 66, 34, 205, 192, 188, 5, 164, 14, 66, 0, 127, 0, 0, 125, 0, 239, 127, 102, 61, 211, 62, 5, 164, 14, 194, 34, 205, 192, 188, 5, 164, 14, 194, 0, 127, 0, 0, 125, 0, 239, 127, 81, 181, 18, 184, 5, 164, 14, 66, 34, 205, 192, 188, 5, 164, 14, 194, 0, 127, 0, 0, 125, 0, 239, 127, 119, 62, 197, 179, 232, 197, 53, 194, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 105, 185, 176, 35, 232, 197, 53, 194, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 105, 185, 176, 35, 232, 197, 53, 194, 34, 205, 192, 188, 54, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 80, 186, 190, 58, 232, 197, 53, 66, 34, 205, 192, 188, 52, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 198, 62, 186, 60, 232, 197, 53, 66, 34, 205, 192, 188, 52, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 198, 62, 186, 60, 232, 197, 53, 66, 34, 205, 192, 188, 54, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 58, 63, 170, 53, 232, 197, 53, 66, 34, 205, 192, 188, 54, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 58, 63, 170, 53, 52, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 197, 172, 34, 63, 52, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 197, 172, 34, 63, 54, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 6, 58, 150, 63, 54, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 6, 58, 150, 63, 52, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 94, 60, 177, 184, 52, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 94, 60, 177, 184, 54, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 59, 52, 153, 185, 54, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 59, 52, 153, 185, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 238, 58, 70, 60, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 238, 58, 70, 60, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 238, 58, 70, 60, 54, 93, 114, 193, 34, 205, 192, 188, 54, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 237, 40, 165, 59, 54, 93, 114, 193, 34, 205, 192, 188, 54, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 237, 40, 165, 59, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 54, 93, 114, 193, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 217, 48, 25, 48, 54, 93, 114, 193, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 217, 48, 25, 48, 54, 93, 114, 193, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 217, 48, 25, 48 ),
+"array_index_data": PoolByteArray( 26, 0, 3, 0, 10, 0, 26, 0, 15, 0, 3, 0, 13, 0, 7, 0, 1, 0, 13, 0, 19, 0, 7, 0, 21, 0, 9, 0, 8, 0, 21, 0, 25, 0, 9, 0, 6, 0, 30, 0, 23, 0, 6, 0, 5, 0, 30, 0, 22, 0, 24, 0, 20, 0, 22, 0, 28, 0, 24, 0, 0, 0, 23, 0, 12, 0, 0, 0, 6, 0, 23, 0, 11, 0, 20, 0, 14, 0, 11, 0, 22, 0, 20, 0, 4, 0, 17, 0, 29, 0, 4, 0, 2, 0, 17, 0, 30, 0, 16, 0, 27, 0, 30, 0, 18, 0, 16, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 54,
+"material": ExtResource( 3 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 31
+}
+
+[sub_resource type="ArrayMesh" id=2]
+resource_name = "Plane"
+surfaces/0 = {
+"aabb": AABB( -45.4433, -0.0235353, -45.4433, 90.8865, 1.00005e-05, 90.8865 ),
+"array_data": PoolByteArray( 5, 164, 14, 194, 34, 205, 192, 188, 5, 164, 14, 66, 0, 127, 0, 0, 125, 0, 239, 127, 201, 184, 194, 61, 5, 164, 14, 66, 34, 205, 192, 188, 5, 164, 14, 66, 0, 127, 0, 0, 125, 0, 239, 127, 102, 61, 211, 62, 5, 164, 14, 194, 34, 205, 192, 188, 5, 164, 14, 194, 0, 127, 0, 0, 125, 0, 239, 127, 81, 181, 18, 184, 5, 164, 14, 66, 34, 205, 192, 188, 5, 164, 14, 194, 0, 127, 0, 0, 125, 0, 239, 127, 119, 62, 197, 179, 232, 197, 53, 194, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 105, 185, 176, 35, 232, 197, 53, 194, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 105, 185, 176, 35, 232, 197, 53, 194, 34, 205, 192, 188, 54, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 80, 186, 190, 58, 232, 197, 53, 66, 34, 205, 192, 188, 52, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 198, 62, 186, 60, 232, 197, 53, 66, 34, 205, 192, 188, 52, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 198, 62, 186, 60, 232, 197, 53, 66, 34, 205, 192, 188, 54, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 58, 63, 170, 53, 232, 197, 53, 66, 34, 205, 192, 188, 54, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 58, 63, 170, 53, 52, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 197, 172, 34, 63, 52, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 197, 172, 34, 63, 54, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 6, 58, 150, 63, 54, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 66, 0, 127, 0, 0, 125, 0, 239, 127, 6, 58, 150, 63, 52, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 94, 60, 177, 184, 52, 93, 114, 65, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 94, 60, 177, 184, 54, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 59, 52, 153, 185, 54, 93, 114, 193, 34, 205, 192, 188, 232, 197, 53, 194, 0, 127, 0, 0, 125, 0, 239, 127, 59, 52, 153, 185, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 238, 58, 70, 60, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 238, 58, 70, 60, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 238, 58, 70, 60, 54, 93, 114, 193, 34, 205, 192, 188, 54, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 237, 40, 165, 59, 54, 93, 114, 193, 34, 205, 192, 188, 54, 93, 114, 65, 0, 127, 0, 0, 125, 0, 239, 127, 237, 40, 165, 59, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 52, 93, 114, 65, 34, 205, 192, 188, 53, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 213, 59, 183, 51, 54, 93, 114, 193, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 217, 48, 25, 48, 54, 93, 114, 193, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 217, 48, 25, 48, 54, 93, 114, 193, 34, 205, 192, 188, 52, 93, 114, 193, 0, 127, 0, 0, 125, 0, 239, 127, 217, 48, 25, 48 ),
+"array_index_data": PoolByteArray( 26, 0, 3, 0, 10, 0, 26, 0, 15, 0, 3, 0, 13, 0, 7, 0, 1, 0, 13, 0, 19, 0, 7, 0, 21, 0, 9, 0, 8, 0, 21, 0, 25, 0, 9, 0, 6, 0, 30, 0, 23, 0, 6, 0, 5, 0, 30, 0, 22, 0, 24, 0, 20, 0, 22, 0, 28, 0, 24, 0, 0, 0, 23, 0, 12, 0, 0, 0, 6, 0, 23, 0, 11, 0, 20, 0, 14, 0, 11, 0, 22, 0, 20, 0, 4, 0, 17, 0, 29, 0, 4, 0, 2, 0, 17, 0, 30, 0, 16, 0, 27, 0, 30, 0, 18, 0, 16, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 54,
+"material": ExtResource( 3 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 31
+}
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( 15.1478, -0.0235, -15.1478, 35.6602, -0.0235, -35.6602, 45.4433, -0.0235, -15.1478, 15.1478, -0.0235, -15.1478, 15.1478, -0.0235, -45.4433, 35.6602, -0.0235, -35.6602, 15.1478, -0.0235, 45.4433, 45.4433, -0.0235, 15.1478, 35.6602, -0.0235, 35.6602, 15.1478, -0.0235, 45.4433, 15.1478, -0.0235, 15.1478, 45.4433, -0.0235, 15.1478, 15.1478, -0.0235, 15.1478, 45.4433, -0.0235, -15.1478, 45.4433, -0.0235, 15.1478, 15.1478, -0.0235, 15.1478, 15.1478, -0.0235, -15.1478, 45.4433, -0.0235, -15.1478, -45.4433, -0.0235, 15.1478, -15.1478, -0.0235, -15.1478, -15.1478, -0.0235, 15.1478, -45.4433, -0.0235, 15.1478, -45.4433, -0.0235, -15.1478, -15.1478, -0.0235, -15.1478, -15.1478, -0.0235, 15.1478, 15.1478, -0.0235, -15.1478, 15.1478, -0.0235, 15.1478, -15.1478, -0.0235, 15.1478, -15.1478, -0.0235, -15.1478, 15.1478, -0.0235, -15.1478, -35.6602, -0.0235, 35.6602, -15.1478, -0.0235, 15.1478, -15.1478, -0.0235, 45.4433, -35.6602, -0.0235, 35.6602, -45.4433, -0.0235, 15.1478, -15.1478, -0.0235, 15.1478, -15.1478, -0.0235, 45.4433, 15.1478, -0.0235, 15.1478, 15.1478, -0.0235, 45.4433, -15.1478, -0.0235, 45.4433, -15.1478, -0.0235, 15.1478, 15.1478, -0.0235, 15.1478, -45.4433, -0.0235, -15.1478, -15.1478, -0.0235, -45.4433, -15.1478, -0.0235, -15.1478, -45.4433, -0.0235, -15.1478, -35.6602, -0.0235, -35.6602, -15.1478, -0.0235, -45.4433, -15.1478, -0.0235, -15.1478, 15.1478, -0.0235, -45.4433, 15.1478, -0.0235, -15.1478, -15.1478, -0.0235, -15.1478, -15.1478, -0.0235, -45.4433, 15.1478, -0.0235, -45.4433 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( 15.1478, -0.0235, -15.1478, 35.6602, -0.0235, -35.6602, 45.4433, -0.0235, -15.1478, 15.1478, -0.0235, -15.1478, 15.1478, -0.0235, -45.4433, 35.6602, -0.0235, -35.6602, 15.1478, -0.0235, 45.4433, 45.4433, -0.0235, 15.1478, 35.6602, -0.0235, 35.6602, 15.1478, -0.0235, 45.4433, 15.1478, -0.0235, 15.1478, 45.4433, -0.0235, 15.1478, 15.1478, -0.0235, 15.1478, 45.4433, -0.0235, -15.1478, 45.4433, -0.0235, 15.1478, 15.1478, -0.0235, 15.1478, 15.1478, -0.0235, -15.1478, 45.4433, -0.0235, -15.1478, -45.4433, -0.0235, 15.1478, -15.1478, -0.0235, -15.1478, -15.1478, -0.0235, 15.1478, -45.4433, -0.0235, 15.1478, -45.4433, -0.0235, -15.1478, -15.1478, -0.0235, -15.1478, -15.1478, -0.0235, 15.1478, 15.1478, -0.0235, -15.1478, 15.1478, -0.0235, 15.1478, -15.1478, -0.0235, 15.1478, -15.1478, -0.0235, -15.1478, 15.1478, -0.0235, -15.1478, -35.6602, -0.0235, 35.6602, -15.1478, -0.0235, 15.1478, -15.1478, -0.0235, 45.4433, -35.6602, -0.0235, 35.6602, -45.4433, -0.0235, 15.1478, -15.1478, -0.0235, 15.1478, -15.1478, -0.0235, 45.4433, 15.1478, -0.0235, 15.1478, 15.1478, -0.0235, 45.4433, -15.1478, -0.0235, 45.4433, -15.1478, -0.0235, 15.1478, 15.1478, -0.0235, 15.1478, -45.4433, -0.0235, -15.1478, -15.1478, -0.0235, -45.4433, -15.1478, -0.0235, -15.1478, -45.4433, -0.0235, -15.1478, -35.6602, -0.0235, -35.6602, -15.1478, -0.0235, -45.4433, -15.1478, -0.0235, -15.1478, 15.1478, -0.0235, -45.4433, 15.1478, -0.0235, -15.1478, -15.1478, -0.0235, -15.1478, -15.1478, -0.0235, -45.4433, 15.1478, -0.0235, -45.4433 )
+
+[sub_resource type="CanvasItemMaterial" id=5]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 0, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 0, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 0, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 0, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 1200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 1200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 1200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 1200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 1200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 1800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 1800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 1800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 1800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 1800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 2400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 2400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 2400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 2400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 2400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 3000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 3000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 3000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 3000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 3000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 3600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 3600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 3600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 3600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 3600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 4200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 4200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 4200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 4200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 4200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 4800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 4800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 4800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 4800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 4800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 5400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 5400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 5400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 5400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 5400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 6000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 6000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 6000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 6000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 6000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 6600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 6600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 6600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 6600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 6600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 7200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 7200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 7200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 7200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 7200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 7800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 7800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 7800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 7800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 7800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 8400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 8400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 8400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 8400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=80]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 8400, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 9000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 9000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 9000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 9000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 9000, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 9600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 9600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 9600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 9600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 9600, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 10200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=92]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 10200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=93]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 10200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=94]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 10200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=95]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 10200, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=96]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 10800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=97]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 800, 10800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=98]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1600, 10800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=99]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2400, 10800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=100]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 3200, 10800, 800, 600 )
+
+[sub_resource type="AtlasTexture" id=101]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 11400, 800, 600 )
+
+[sub_resource type="SpriteFrames" id=102]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ), SubResource( 98 ), SubResource( 99 ), SubResource( 100 ), SubResource( 101 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=103]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Theme" id=104]
+
+[sub_resource type="CanvasItemMaterial" id=105]
+
+[sub_resource type="Theme" id=106]
+
+[sub_resource type="StyleBoxFlat" id=107]
+content_margin_left = 1.0
+content_margin_right = 1.0
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+bg_color = Color( 0.470588, 0.74902, 0.556863, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id=108]
+content_margin_left = 1.0
+content_margin_right = 1.0
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+bg_color = Color( 0.470588, 0.74902, 0.556863, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id=109]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=110]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="WorldEnvironment" type="Spatial"]
+visible = false
+script = ExtResource( 9 )
+
+[node name="GameScreen" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PondScene" type="Control" parent="GameScreen"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Duck" parent="GameScreen/PondScene" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.14743, 0, 0 )
+visible = false
+script = ExtResource( 4 )
+
+[node name="DuckCameraPosition" type="Position3D" parent="GameScreen/PondScene/Duck"]
+transform = Transform( -0.999999, -3.98674e-09, -8.76049e-08, -1.19602e-08, 0.995832, 0.0912061, 8.68761e-08, 0.0912061, -0.995831, 3.44798e-07, 1.42667, -7.88805 )
+
+[node name="DuckTemplate" parent="GameScreen/PondScene" instance=ExtResource( 1 )]
+transform = Transform( 0.865571, 0, -0.500786, 0, 1, 0, 0.500786, 0, 0.865571, -5.14743, 0, 0 )
+visible = false
+script = null
+
+[node name="LillyPads" parent="GameScreen/PondScene" instance=ExtResource( 2 )]
+
+[node name="Water" type="KinematicBody" parent="GameScreen/PondScene"]
+input_ray_pickable = false
+input_capture_on_drag = true
+collision_layer = 4
+
+[node name="Plane001" type="MeshInstance" parent="GameScreen/PondScene/Water"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -2.03341, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Plane" type="MeshInstance" parent="GameScreen/PondScene/Water"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="TopWater" type="CollisionShape" parent="GameScreen/PondScene/Water"]
+shape = SubResource( 3 )
+
+[node name="BottomWater" type="CollisionShape" parent="GameScreen/PondScene/Water"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -2.03341, 0 )
+shape = SubResource( 4 )
+
+[node name="OmniLight" type="OmniLight" parent="GameScreen/PondScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.8755, 0 )
+omni_range = 66.4957
+
+[node name="DuckCamera" type="InterpolatedCamera" parent="GameScreen/PondScene"]
+environment = ExtResource( 16 )
+current = true
+target = NodePath("../Duck/DuckCameraPosition")
+enabled = true
+
+[node name="PondNetwork" type="CenterContainer" parent="GameScreen"]
+visible = false
+anchor_right = 1.0
+margin_top = 50.0
+margin_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingAnimation" type="AnimatedSprite" parent="GameScreen/PondNetwork"]
+material = SubResource( 5 )
+position = Vector2( 505.996, -5.76343 )
+scale = Vector2( 0.453375, 0.408655 )
+frames = SubResource( 102 )
+frame = 64
+speed_scale = 5.0
+playing = true
+
+[node name="LoadingLabel" type="Label" parent="GameScreen/PondNetwork/LoadingAnimation"]
+material = SubResource( 103 )
+anchor_left = 0.0703125
+anchor_top = 0.48
+anchor_right = 0.0703125
+anchor_bottom = 0.48
+margin_left = -168.731
+margin_top = -212.72
+margin_right = 84.2688
+margin_bottom = -187.72
+size_flags_horizontal = 0
+text = "Connecting To Network"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="client" type="Node" parent="GameScreen"]
+script = ExtResource( 12 )
+
+[node name="UserControls" type="Control" parent="GameScreen"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinHostButton" type="TextureButton" parent="GameScreen/UserControls"]
+margin_left = 5.00012
+margin_top = 5.0
+margin_right = 76.0001
+margin_bottom = 77.0
+rect_scale = Vector2( 0.4, 0.4 )
+toggle_mode = true
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 5 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostSelection" type="Control" parent="GameScreen/UserControls"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.00012207
+margin_top = 1.1921e-07
+margin_right = 0.00012207
+margin_bottom = 1.1921e-07
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 104 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinHost" type="Panel" parent="GameScreen/UserControls/HostSelection"]
+visible = false
+material = SubResource( 105 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 216.543
+margin_top = 176.36
+margin_right = 816.543
+margin_bottom = 276.36
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource( 106 )
+custom_styles/panel = SubResource( 107 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="join_host_edit" type="TextEdit" parent="GameScreen/UserControls/HostSelection/JoinHost"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -20.0
+margin_right = 250.0
+margin_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_colors/background_color = Color( 0.133333, 0.172549, 0.133333, 1 )
+v_scroll_speed = 0.0
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="join_host_line" type="LineEdit" parent="GameScreen/UserControls/HostSelection/JoinHost/join_host_edit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+placeholder_text = "https://kidgames.io"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="join_host_label" type="Label" parent="GameScreen/UserControls/HostSelection/JoinHost"]
+margin_left = 16.0
+margin_top = 6.0
+margin_right = 131.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 0.192157, 0.309804, 0.196078, 1 )
+text = "Join Host:"
+
+[node name="ColorSelection" type="Control" parent="GameScreen/UserControls"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorDuckButton" type="TextureButton" parent="GameScreen/UserControls/ColorSelection"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 978.271
+margin_top = 1.84564
+margin_right = 1967.27
+margin_bottom = 769.846
+rect_scale = Vector2( 0.05, 0.05 )
+rect_clip_content = true
+toggle_mode = true
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+texture_disabled = ExtResource( 13 )
+texture_focused = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DuckColor" type="Panel" parent="GameScreen/UserControls/ColorSelection"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 262.948
+margin_top = 100.0
+margin_right = 762.948
+margin_bottom = 500.0
+custom_styles/panel = SubResource( 108 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameScreen/UserControls/ColorSelection/DuckColor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer"]
+margin_right = 480.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Duck Colors"
+
+[node name="MaterialHead" type="HBoxContainer" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer"]
+margin_top = 33.0
+margin_right = 480.0
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialLabel" type="Label" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialHead"]
+margin_right = 163.0
+margin_bottom = 25.0
+text = "Head Feathers:"
+
+[node name="MaterialEdit" type="TextEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialHead"]
+margin_left = 171.0
+margin_right = 480.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 109 )
+
+[node name="MaterialLine" type="LineEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialHead/MaterialEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 110 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialBody" type="HBoxContainer" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer"]
+margin_top = 66.0
+margin_right = 480.0
+margin_bottom = 91.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialLabel" type="Label" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBody"]
+margin_right = 161.0
+margin_bottom = 25.0
+text = "Body Feathers:"
+
+[node name="MaterialEdit" type="TextEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBody"]
+margin_left = 169.0
+margin_right = 480.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 109 )
+
+[node name="MaterialLine" type="LineEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBody/MaterialEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 110 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialBill" type="HBoxContainer" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer"]
+margin_top = 99.0
+margin_right = 480.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialLabel" type="Label" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBill"]
+margin_right = 159.0
+margin_bottom = 25.0
+text = "Bill:                    "
+
+[node name="MaterialEdit" type="TextEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBill"]
+margin_left = 167.0
+margin_right = 480.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 109 )
+
+[node name="MaterialLine" type="LineEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBill/MaterialEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 110 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialBillEdge" type="HBoxContainer" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer"]
+margin_top = 132.0
+margin_right = 480.0
+margin_bottom = 157.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialLabel" type="Label" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBillEdge"]
+margin_right = 158.0
+margin_bottom = 25.0
+text = "Bill Edge:          "
+
+[node name="MaterialEdit" type="TextEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBillEdge"]
+margin_left = 166.0
+margin_right = 480.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 109 )
+
+[node name="MaterialLine" type="LineEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialBillEdge/MaterialEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 110 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialEyes" type="HBoxContainer" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer"]
+margin_top = 165.0
+margin_right = 480.0
+margin_bottom = 190.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaterialLabel" type="Label" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialEyes"]
+margin_right = 157.0
+margin_bottom = 25.0
+text = "Eyes:                 "
+
+[node name="MaterialEdit" type="TextEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialEyes"]
+margin_left = 165.0
+margin_right = 480.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 109 )
+
+[node name="MaterialLine" type="LineEdit" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MaterialEyes/MaterialEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 110 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="HBoxContainer" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer"]
+margin_top = 198.0
+margin_right = 480.0
+margin_bottom = 235.0
+size_flags_horizontal = 3
+
+[node name="Cancel" type="Button" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MarginContainer"]
+margin_right = 236.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MarginContainer"]
+margin_left = 244.0
+margin_right = 480.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserName" type="Label" parent="GameScreen/UserControls"]
+anchor_right = 1.0
+margin_left = 500.0
+margin_top = 10.0
+margin_right = 980.0
+margin_bottom = 35.0
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartScreen" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserNameEdit" type="TextEdit" parent="StartScreen"]
+margin_left = 300.0
+margin_top = 530.369
+margin_right = 600.0
+margin_bottom = 570.369
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserNameLine" type="LineEdit" parent="StartScreen/UserNameEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BeginGame" type="Button" parent="StartScreen"]
+margin_left = 610.0
+margin_top = 531.999
+margin_right = 727.0
+margin_bottom = 568.999
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Begin >>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DuckyPond" type="VSplitContainer" parent="StartScreen"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -195.975
+margin_top = 17.1505
+margin_right = 605.025
+margin_bottom = 387.151
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DuckLogo" type="TextureRect" parent="StartScreen/DuckyPond"]
+margin_right = 801.0
+margin_bottom = 768.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource( 13 )
+stretch_mode = 4
+
+[node name="DuckLogoText" type="TextureRect" parent="StartScreen/DuckyPond"]
+margin_top = 792.0
+margin_right = 801.0
+margin_bottom = 970.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 14 )
+stretch_mode = 4
+
+[connection signal="toggled" from="GameScreen/UserControls/JoinHostButton" to="GameScreen/PondScene/Duck" method="_on_JoinHostButton_toggled"]
+[connection signal="connect_host" from="GameScreen/UserControls/HostSelection/JoinHost/join_host_edit/join_host_line" to="." method="_on_join_host_line_connect_host"]
+[connection signal="toggled" from="GameScreen/UserControls/ColorSelection/ColorDuckButton" to="GameScreen/PondScene/Duck" method="_on_ColorDuckButton_toggled"]
+[connection signal="pressed" from="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MarginContainer/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="pressed" from="GameScreen/UserControls/ColorSelection/DuckColor/VBoxContainer/MarginContainer/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="StartScreen/BeginGame" to="." method="_on_BeginGame_pressed"]
