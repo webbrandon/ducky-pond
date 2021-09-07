@@ -1,4 +1,4 @@
-# ducky-pond (WIP)
+# ducky-pond
 Multiplayer game for multi-platform play.
 
 ## Releases
